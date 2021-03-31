@@ -1,0 +1,9 @@
+.title{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.closeBtnContainer{
+    flex-direction: row;
+    justify-content: flex-end;
+}

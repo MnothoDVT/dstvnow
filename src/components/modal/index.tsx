@@ -1,7 +1,10 @@
-import React from 'react';
 import Modal from 'react-modal';
-import { Entry } from '../../redux/modules/movies/types';
- import {Button, Col, Container, Row } from "react-bootstrap"
+import "./styles.css"
+import { IMovie } from '../../redux/modules/movies/types';
+import {Button, Col, Container, Row } from "react-bootstrap"
+import ShareIcon from '@material-ui/icons/Share';
+import CloseIcon from '@material-ui/icons/Close';
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -16,43 +19,40 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 interface ModalProps {
-    movie?: Entry;
+    movie?: IMovie;
     onClose: () => void;
     isOpen: boolean;
 }
 export default function MovieDetails(props : ModalProps){
-  const {isOpen, onClose, movie} = props
-
-//   function afterOpenModal() {
-//   }
- 
-//   function closeModal(){
-//     setIsOpen(false);
-//   }
+    const {isOpen, onClose, movie} = props
  
     return (
       <div>
         <Modal
           isOpen={isOpen}
-        //   onAfterOpen={afterOpenModal}
           onRequestClose={onClose}
           style={customStyles}
           contentLabel="Movie Details"
         >
         <Container>
-            <Row>
+            <Row className="closeBtnContainer">
                 <Button onClick={onClose}>
-                    close
+                    <CloseIcon />
                 </Button>
             </Row>
             <Row>
-                <Col >
-                <img src={movie?.imageUrl} />
+                <Col md>
+                    <img src={movie?.imageUrl} />
                 </Col>
 
                 <Col>
-                    <p>{movie?.title}</p>
-                </Col>
+                    <p className="title">{movie?.title}</p>
+                    <p className="date">{movie?.releaseDate}</p>
+                    <p className="description">{movie?.synopsis}</p>
+                    <Row>
+                        <ShareIcon />
+                    </Row>
+                </Col>           
             </Row>
         </Container>
         </Modal>

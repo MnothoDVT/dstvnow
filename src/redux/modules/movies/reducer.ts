@@ -3,7 +3,8 @@ import { getMoviesSuccess } from "./actions";
 import { MovieDataState } from "./types";
 
 const INITIAL_STATE: MovieDataState = {
-  movieData: undefined,
+  movies: [],
+  sortBy :[],
 };
 
 export const movieReducer = createReducer(INITIAL_STATE, (builder) => {

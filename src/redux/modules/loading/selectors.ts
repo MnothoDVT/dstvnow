@@ -1,5 +1,3 @@
-import _ from "lodash";
+import { AppState } from "../../root.reducer";
 
-export const createLoadingSelector = (actions: any) => (state: any) => {
-  return _(actions).some((action) => _.get(state, `loading.${action}`));
-};
+export const useLoading = (app: AppState) => app.loading.loading;
