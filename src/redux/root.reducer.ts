@@ -1,6 +1,6 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import { loadingReducer } from "./modules/loading/reducer";
-import { movieReducer } from "./modules/movies/reducer";
+import { combineReducers } from '@reduxjs/toolkit';
+import { loadingReducer } from './modules/loading/reducer';
+import { movieReducer } from './modules/movies/reducer';
 
 export const reducers = combineReducers({
   loading: loadingReducer,

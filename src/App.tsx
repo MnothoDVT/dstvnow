@@ -5,10 +5,10 @@ import MovieList from './screens/movieList';
 
 function App() {
  return (
-   <React.Fragment>
+   <>
       <Loader />
       <MovieList />
-    </React.Fragment>
+    </>
   )
 
 }

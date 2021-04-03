@@ -1,24 +1,33 @@
-import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
-import { useSelector } from "react-redux";
-import { useLoading } from "../../redux/modules/loading/selectors";
-import "./styles.css"
-import  Modal  from "react-modal";
+import { css } from '@emotion/react';
+import PulseLoader from 'react-spinners/PulseLoader';
+import { useSelector } from 'react-redux';
+import { useLoading } from '../../redux/modules/loading/selectors';
+import './styles.css'
+import  Modal  from 'react-modal';
 
-// Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
-  display: block;
+  background-color : transparent;
   margin: 0 auto;
-  border-color: red;
 `;
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor : 'transparent',
+    borderWidth : '0px',
+  }
+};
 
 export default function Loader() {
-  const loading = useSelector(useLoading)
-    console.log({loading})
+  const loading =  useSelector(useLoading)
   return (
-      <Modal className="modal" isOpen={loading} >
-        <ClipLoader color={"blue"} loading={loading} css={override} size={150} />
+      <Modal style={customStyles}  isOpen={loading} >
+        <PulseLoader color="blue" loading={loading} css={override} size={30} />
       </Modal>
   );
 }

@@ -1,0 +1,20 @@
+.card{
+    background-color: #1f2a2d;
+    border-color: aliceblue;
+    border-width: 0.5px;
+}
+
+.title{
+    align-self: center;
+    color: aliceblue;
+  }
+
+  .text{
+    color: aliceblue;
+  }
+
+  .button{
+    border-color: aliceblue;
+    border-width: 0.5px;
+    background-color: transparent;
+  }

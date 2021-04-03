@@ -1,7 +1,7 @@
-import { all } from "redux-saga/effects";
+import { all } from 'redux-saga/effects';
 
-import { watchMovieSagas } from "./modules/movies/sagas";
+import { watchMovieSagas } from './modules/movies/sagas';
 
-export function* sagas() {
+export function* sagas(){
   yield all([watchMovieSagas()]);
 }

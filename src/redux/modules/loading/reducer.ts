@@ -10,6 +10,6 @@ export function loadingReducer(state = { loading: false}, action: any) {
   const [, , requestState] = matches;
   return {
     ...state,
-    loading: requestState === "REQUEST",
+    loading: requestState === 'REQUEST',
   };
 }
